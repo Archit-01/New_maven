@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+        maven 'Maven-3.9.11'   // must match the name you set in Jenkins Tools
+    }
+
     stages {
         stage('Checkout') {
             steps {
@@ -23,7 +27,6 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying application...'
-                // Add deploy steps here (docker build, kubectl apply, etc.)
             }
         }
     }
